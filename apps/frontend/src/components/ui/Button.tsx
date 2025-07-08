@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react'
-import { LucideIcon } from 'lucide-react'
 import { motion, HTMLMotionProps } from 'framer-motion'
 import { cn } from '../../utils/cn'
+import { UniversalIcon } from '../../types/icons'
 
 export interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'size'> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'success' | 'warning'
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' | 'success' | 'warning' | 'ai'
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-  icon?: LucideIcon
+  icon?: UniversalIcon
   iconPosition?: 'left' | 'right'
   loading?: boolean
   fullWidth?: boolean
@@ -89,6 +89,14 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         'hover:shadow-xl hover:shadow-orange-500/30',
         'focus:ring-orange-500/50',
         'active:from-orange-700 active:to-orange-800',
+      ],
+      ai: [
+        'bg-gradient-to-r from-purple-500 to-purple-600',
+        'text-white shadow-lg shadow-purple-500/25',
+        'hover:from-purple-600 hover:to-purple-700',
+        'hover:shadow-xl hover:shadow-purple-500/30',
+        'focus:ring-purple-500/50',
+        'active:from-purple-700 active:to-purple-800',
       ],
     }
 

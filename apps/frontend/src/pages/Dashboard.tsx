@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Button, Badge } from '../components/ui/UIComponents';
 import { Chart } from '../components/ui/Chart';
+import { RiskHeatmap } from '../components/analytics/RiskHeatmap';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface KPICardProps {
   title: string;
@@ -523,6 +525,21 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
         </Card>
+      </div>
+
+      {/* Risk Heatmap Section */}
+      <div>
+        <h2 className="text-2xl font-bold text-dark-navy mb-6">Risk Analysis</h2>
+        <RiskHeatmap 
+          onCellClick={(cell) => {
+            console.log('Risk cell clicked:', cell);
+            // Navigate to detailed risk view
+          }}
+          onExport={() => {
+            console.log('Exporting risk heatmap data');
+            // Implement export functionality
+          }}
+        />
       </div>
 
       {/* Quick Access Grid */}

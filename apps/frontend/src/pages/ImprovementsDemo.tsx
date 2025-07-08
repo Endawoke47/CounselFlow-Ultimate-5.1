@@ -4,17 +4,15 @@ import {
   Search, 
   Download, 
   Edit, 
-  Trash2, 
+  Delete, 
   Plus,
-  Wifi,
-  WifiOff,
-  Moon,
-  Sun,
-  Keyboard,
   Zap,
   Shield,
-  RefreshCw
-} from 'lucide-react'
+  Wifi,
+  WifiOff,
+  RefreshCw,
+  Keyboard
+} from '../components/icons'
 
 import { DashboardSkeleton, CardSkeleton, TableSkeleton } from '../components/ui/SkeletonLoader'
 import { ErrorDisplay, InlineError } from '../components/ui/ErrorDisplay'
@@ -180,7 +178,7 @@ export function ImprovementsDemo() {
     },
     {
       label: 'Delete',
-      icon: Trash2,
+      icon: Delete,
       onClick: (item: DemoData) => {
         deleteOptimistic(['demo-data'], item, async () => {
           // Simulate API call
@@ -202,7 +200,7 @@ export function ImprovementsDemo() {
     },
     {
       label: 'Delete Selected',
-      icon: Trash2,
+      icon: Delete,
       onClick: (items: DemoData[]) => {
         console.log('Deleting items:', items)
       },

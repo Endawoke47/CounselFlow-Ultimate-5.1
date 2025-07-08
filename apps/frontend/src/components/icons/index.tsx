@@ -95,6 +95,22 @@ export const Mail = createIcon("M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 
 export const Phone = createIcon("M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z")
 export const Message = createIcon("M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z")
 export const Bell = createIcon("M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9m-5.27 13a2 2 0 0 1-3.46 0")
+export const Send = createIcon("M22 2L11 13l-3-3m0 0l-2 2-2-2m4 0V3a1 1 0 011-1h10a1 1 0 011 1v10")
+export const Paperclip = createIcon("M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66L9.64 16.2a2 2 0 01-2.83-2.83l7.07-7.07")
+export const Mic = createIcon("M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z m0 16v4m-4-2h8")
+export const ThumbsUp = createIcon("M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3")
+export const ThumbsDown = createIcon("M10 15v4a3 3 0 003 3l4-9V2H5.72a2 2 0 00-2 1.7l-1.38 9a2 2 0 002 2.3zm7-13h2.67A2.31 2.31 0 0122 4v7a2.31 2.31 0 01-2.33 2H17")
+export const Bot = createIcon("M12 8V4m0 8v8m-4-4h8m-8 0a4 4 0 108 0m-8 0a4 4 0 118 0")
+export const Sparkles = createIcon("M12 2l2 7h7l-5.5 4L17 20l-5-4-5 4 1.5-7L3 9h7l2-7z")
+export const BookOpen = createIcon("M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2V3zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7V3z")
+export const Calculator = createIcon("M9 7h6m0 0v6m0-6l-6 6m-1-3h.01M9 17h.01M15 17h.01M12 17h.01M21 5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5z")
+export const AlertTriangle = createIcon("M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0zM12 9v4m0 4h.01")
+export const Maximize2 = createIcon("M15 3h6v6M14 10l6.1-6.1M9 21H3v-6m6 6l-6.1-6.1")
+export const Zap = createIcon("M13 2L3 14h9l-1 8 10-12h-9l1-8z")
+export const Wifi = createIcon("M5 12.55a11 11 0 0 1 14.08 0m-11.2 2.3a7 7 0 0 1 8.24 0m-5.2 2.3a3 3 0 0 1 2.16 0")
+export const WifiOff = createIcon("M1 1l22 22M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39m3.66 2.84a7 7 0 0 1 2.28.87M8.21 13.89a7 7 0 0 1 3.79-1.78m2.93 3.78a3 3 0 0 1 1.78.87M8.5 16.429a3 3 0 0 1 1.78-.87")
+export const RefreshCw = createIcon("M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8M3 16l2.26 2.26A9.75 9.75 0 0 0 12 21a9 9 0 0 0 9-9")
+export const Keyboard = createIcon("M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 3v2m6-2v2m-6 3v2m3-2v2m3-2v2")
 
 // Settings & Configuration
 export const Settings = createIcon("M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z")
@@ -143,7 +159,10 @@ const Icons = {
   Scale, Shield,
   
   // Communication
-  Mail, Phone, Message, Bell,
+  Mail, Phone, Message, Bell, Send, Paperclip, Mic, ThumbsUp, ThumbsDown, Bot, Sparkles, BookOpen, Calculator, AlertTriangle, Maximize2,
+  
+  // Utility
+  Zap, Wifi, WifiOff, RefreshCw, Keyboard,
   
   // Settings
   Settings, User, Users, Lock, Key, LogOut,
