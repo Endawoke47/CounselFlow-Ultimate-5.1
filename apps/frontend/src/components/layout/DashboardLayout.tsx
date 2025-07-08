@@ -16,7 +16,12 @@ import {
   Plus,
   ChevronDown,
   Scale,
-  LogOut
+  LogOut,
+  Building,
+  CheckCircle,
+  Shield,
+  Users,
+  AlertTriangle
 } from '../icons'
 import { useAuth } from '../../contexts/AuthContext'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -56,20 +61,26 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
   const navigation = [
     { name: 'Dashboard', href: '/dashboard', icon: Home },
-    { name: 'Matters', href: '/matters', icon: Cases },
+    
+    // Core Legal Operations
+    { name: 'Entity Management', href: '/entity-management', icon: Building },
     { name: 'Contracts', href: '/contracts', icon: Contracts },
-    { name: 'Clients', href: '/clients', icon: Clients },
-    { name: 'Documents', href: '/documents', icon: Documents },
-    { name: 'AI Document Analysis', href: '/document-analysis', icon: AI },
-    { name: 'AI Assistant', href: '/ai', icon: AI },
-    { name: 'Legal Intake', href: '/intake', icon: Plus },
-    { name: 'IP Management', href: '/ip-management', icon: Documents },
-    { name: 'Entity Management', href: '/entity-management', icon: Cases },
-    { name: 'Compliance', href: '/compliance', icon: Documents },
-    { name: 'Privacy & Data', href: '/privacy', icon: Documents },
     { name: 'Disputes', href: '/disputes', icon: Cases },
-    { name: 'Spend Analytics', href: '/spend-analytics', icon: Analytics },
-    { name: 'Knowledge Base', href: '/knowledge', icon: Database },
+    { name: 'Matters', href: '/matters', icon: Cases },
+    { name: 'Tasks', href: '/tasks', icon: CheckCircle },
+    
+    // Governance & Compliance
+    { name: 'Policies', href: '/policies', icon: Shield },
+    { name: 'Knowledge', href: '/knowledge', icon: Database },
+    { name: 'Licensing & Regulatory', href: '/licensing', icon: Shield },
+    
+    // External Management
+    { name: 'Outsourcing & Spend', href: '/outsourcing', icon: Users },
+    { name: 'Risk Management', href: '/risks', icon: AlertTriangle },
+    
+    // Legacy/AI Features
+    { name: 'AI Assistant', href: '/ai', icon: AI },
+    { name: 'Documents', href: '/documents', icon: Documents },
     { name: 'Settings', href: '/settings', icon: Settings },
   ]
 
