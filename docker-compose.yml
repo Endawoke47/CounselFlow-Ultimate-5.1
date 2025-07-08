@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: counselflow-postgres
+    environment:
+      POSTGRES_DB: counselflow_ultimate
+      POSTGRES_USER: counselflow
+      POSTGRES_PASSWORD: secure_password_123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U counselflow -d counselflow_ultimate"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - counselflow-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile
+    container_name: counselflow-backend
+    environment:
+      - NODE_ENV=development
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_USERNAME=counselflow
+      - DATABASE_PASSWORD=secure_password_123
+      - DATABASE_NAME=counselflow_ultimate
+      - JWT_SECRET=counselflow-ultimate-super-secret-jwt-key
+      - PORT=3001
+    ports:
+      - "3001:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./apps/backend:/app
+      - /app/node_modules
+    command: npm run start:dev
+    networks:
+      - counselflow-network
+
+  # Frontend Application
+  frontend:
+    build:
+      context: ./apps/frontend
+      dockerfile: Dockerfile
+    container_name: counselflow-frontend
+    environment:
+      - VITE_API_URL=http://localhost:3001/api/v1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./apps/frontend:/app
+      - /app/node_modules
+    command: npm run dev -- --host 0.0.0.0
+    networks:
+      - counselflow-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  counselflow-network:
+    driver: bridge

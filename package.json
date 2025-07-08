@@ -1,0 +1,38 @@
+{
+  "name": "counselflow-ultimate-5.1",
+  "version": "5.1.0",
+  "description": "CounselFlow Ultimate 5.1 - World-Class AI-Powered Legal Management Platform",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
+    "build": "npm run backend:build && npm run frontend:build",
+    "start": "npm run backend:start",
+    "backend:dev": "cd apps/backend && npm run start:dev",
+    "backend:build": "cd apps/backend && npm run build",
+    "backend:start": "cd apps/backend && npm run start:prod",
+    "frontend:dev": "cd apps/frontend && npm run dev",
+    "frontend:build": "cd apps/frontend && npm run build",
+    "frontend:preview": "cd apps/frontend && npm run preview",
+    "install:all": "npm install && cd apps/backend && npm install && cd ../frontend && npm install",
+    "db:migrate": "cd apps/backend && npm run migration:run",
+    "db:seed": "cd apps/backend && npm run seed",
+    "test": "npm run backend:test && npm run frontend:test",
+    "backend:test": "cd apps/backend && npm test",
+    "frontend:test": "cd apps/frontend && npm test",
+    "lint": "npm run backend:lint && npm run frontend:lint",
+    "backend:lint": "cd apps/backend && npm run lint",
+    "frontend:lint": "cd apps/frontend && npm run lint",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build"
+  },
+  "keywords": ["legal", "management", "ai", "law", "counselflow"],
+  "author": "CounselFlow Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "workspaces": [
+    "apps/*"
+  ]
+}
